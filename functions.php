@@ -132,6 +132,12 @@ function gaetanmasson_2019_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'gaetanmasson_2019_scripts' );
 
+function gaetanmasson_2019_google_fonts() {
+	wp_enqueue_style( 'gaetanmasson_2019_google_fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600|Source+Serif+Pro&display=swap', false ); 
+}
+	 
+add_action( 'wp_enqueue_scripts', 'gaetanmasson_2019_google_fonts' );
+
 /**
  * Implement the Custom Header feature.
  */

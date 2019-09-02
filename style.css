@@ -353,13 +353,14 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6 {
-  clear: both; }
+  clear: both;
+  font-family: "Source Serif Pro", serif; }
 
 p {
   margin-bottom: 1.5em; }
@@ -537,11 +538,11 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue; }
+  color: #0077BE; }
   a:visited {
-    color: purple; }
+    color: #0077BE; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: #00578b; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -551,10 +552,14 @@ a {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
   clear: both;
-  display: block;
-  float: left;
-  width: 100%; }
+  display: flex;
+  justify-content: space-between;
+  height: 88px;
+  margin-left: 48px;
+  margin-right: 48px; }
   .main-navigation ul {
     display: none;
     list-style: none;
@@ -581,9 +586,10 @@ a {
   .main-navigation li {
     float: left;
     position: relative; }
+    .main-navigation li:not(:last-child) {
+      margin-right: 24px; }
   .main-navigation a {
-    display: block;
-    text-decoration: none; }
+    display: block; }
 
 /* Small menu. */
 .menu-toggle,
@@ -614,6 +620,11 @@ a {
   float: right;
   text-align: right;
   width: 50%; }
+
+.site-title {
+  font-size: 1.5rem;
+  line-height: 1;
+  margin: 0; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -749,7 +760,8 @@ a {
 ## Grid
 --------------------------------------------------------------*/
 .grid-container {
-  max-width: 1600px; }
+  display: grid;
+  max-width: 1448px; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

@@ -25,12 +25,34 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'gaetanmasson_2019' ); ?></a>
 
 	<header id="masthead" class="site-header">
+		<div class="grid-container">
+			<nav id="site-navigation" class="main-navigation">
+				<div class="main-navigation__left">
+					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				</div>
+				<div class="main-navigation__right">
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'gaetanmasson_2019' ); ?></button>
+					<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					) );
+					?>
+				</div>
+			</nav><!-- #site-navigation -->
+		</div>
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
+				$front_page_title = get_field( "front_page_title" );
 				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title"><?php echo ($front_page_title ? $front_page_title : 'Headline missing'); ?></h1>
+				<?php
+			elseif ( is_page('about') ) :
+				$about_page_title = get_field( "about_page_title" );
+				?>
+				<h1 class="about-title"><?php echo ($about_page_title ? $about_page_title : 'Headline missing'); ?></h1>
 				<?php
 			else :
 				?>
@@ -43,16 +65,6 @@
 				<p class="site-description"><?php echo $gaetanmasson_2019_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'gaetanmasson_2019' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
