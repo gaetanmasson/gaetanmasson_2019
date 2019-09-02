@@ -1,3 +1,5 @@
+'use strict';
+
 // require gulp and gulp-sass
 const gulp = require('gulp');
 const sass = require('gulp-sass');
