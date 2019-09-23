@@ -8,7 +8,7 @@ const sass = require('gulp-sass');
 gulp.task('sass', () => { 
     return gulp.src('sass/style.scss')
       .pipe(sass().on('error', sass.logError))
-      .pipe(gulp.dest('.'));
+      .pipe(gulp.dest('css'));
 });
 
 //compile and watch 

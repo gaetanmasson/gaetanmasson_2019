@@ -116,11 +116,18 @@ function gaetanmasson_2019_widgets_init() {
 }
 add_action( 'widgets_init', 'gaetanmasson_2019_widgets_init' );
 
+
 /**
  * Enqueue scripts and styles.
  */
 function gaetanmasson_2019_scripts() {
-	wp_enqueue_style( 'gaetanmasson_2019-style', get_stylesheet_uri() );
+	wp_register_style(
+		'gaetanmasson_2019-style',
+		get_template_directory_uri() . '/css/style.css',
+		null
+	);
+
+	wp_enqueue_style( 'gaetanmasson_2019-style');
 
 	wp_enqueue_script( 'gaetanmasson_2019-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
