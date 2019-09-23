@@ -1,5 +1,11 @@
 .grid-container {
     display: grid;
-    margin: 0 auto;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     max-width: 1440px;
+
+    @include lg {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
 }
