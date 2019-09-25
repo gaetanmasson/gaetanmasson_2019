@@ -32,8 +32,8 @@
 				</div>
 				<div class="main-navigation__right">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-						<figure class="icon__menu"><?php echo file_get_contents( get_template_directory() . "/images/icon__menu.svg" ); ?></figure>
-						<figure class="icon__close"><?php echo file_get_contents( get_template_directory() . "/images/icon__close.svg" ); ?></figure>
+						<figure class="icon__menu"><?php echo file_get_contents( get_template_directory() . "/assets/images/icon__menu.svg" ); ?></figure>
+						<figure class="icon__close"><?php echo file_get_contents( get_template_directory() . "/assets/images/icon__close.svg" ); ?></figure>
 					</button>
 					<?php
 					wp_nav_menu( array(
