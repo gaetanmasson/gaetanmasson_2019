@@ -1,4 +1,8 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-	font-family: $font__heading;
+	font-family: $font__heading-family;
+}
+
+.frontpage__title {
+	font-size: $font__heading-size--small;
 }

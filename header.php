@@ -47,27 +47,58 @@
 		<div class="grid-container">
 			<div class="site-branding">
 				<?php
-				the_custom_logo();
 				if ( is_front_page() && is_home() ) :
-					$front_page_title = get_field( "front_page_title" );
+					$frontpage__title =  get_field('frontpage__title', 'option');
+					$frontpage__tagline = get_field('frontpage__tagline', 'option');
+					$frontpage__tagline_link = get_field('frontpage__tagline-link', 'option');
+					
+					if( $frontpage__tagline_link ) {
+						$frontpage__tagline_link_url = $frontpage__tagline_link['url'];
+						$frontpage__tagline_link_title = $frontpage__tagline_link['title'];
+						$frontpage__tagline_link_target = $frontpage__tagline_link['target'] ? $frontpage__tagline_link['target'] : '_self';
+					}
 					?>
-					<h1 class="site-title"><?php echo ($front_page_title ? $front_page_title : 'Headline missing'); ?></h1>
-					<?php
+						<?php
+						if ( $frontpage__title ) :
+						?>
+							<h1 class="frontpage__title"><?php echo $frontpage__title; ?></h1>
+						<?php
+						else :
+						?>
+							<h1 class="frontpage__title"><?php echo "Title is missing"; ?></h1>
+						<?php
+						endif;
+
+						if ( $frontpage__tagline ) :
+						?>
+							<p class="frontpage__tagline"><?php echo $frontpage__tagline . " "; ?>
+								<?php
+								if ($frontpage__tagline_link) :
+								?>
+									<a class="button" href="<?php echo esc_url($frontpage__tagline_link_url); ?>" target="<?php echo esc_attr($frontpage__tagline_link_target); ?>"><?php echo esc_html($frontpage__tagline_link_title); ?></a>
+								<?php
+								endif;
+								?>
+							</p>
+						<?php
+						else :
+							?>
+							<p class="frontpage__tagline"><?php echo "Tagline is missing"; ?></p>
+						<?php
+						endif;
+					?>
+				<?php
 				elseif ( is_page('about') ) :
-					$about_page_title = get_field( "about_page_title" );
-					?>
+					$about_page__title = get_field( "about_page__title" );
+				?>
 					<h1 class="about-title"><?php echo ($about_page_title ? $about_page_title : 'Headline missing'); ?></h1>
-					<?php
+				<?php
 				else :
-					?>
+				?>
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php
+				<?php
 				endif;
-				$gaetanmasson_2019_description = get_bloginfo( 'description', 'display' );
-				if ( $gaetanmasson_2019_description || is_customize_preview() ) :
-					?>
-					<p class="site-description"><?php echo $gaetanmasson_2019_description; /* WPCS: xss ok. */ ?></p>
-				<?php endif; ?>
+				?>
 			</div><!-- .site-branding -->
 		</div>
 	</header><!-- #masthead -->

@@ -5,7 +5,7 @@ select,
 optgroup,
 textarea {
 	color: $color__text-main;
-	font-family: $font__body;
+	font-family: $font__body-family;
 	@include font-size(1);
 	line-height: $font__line-height-body;
 }
