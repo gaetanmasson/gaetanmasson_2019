@@ -31,7 +31,10 @@
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				</div>
 				<div class="main-navigation__right">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'gaetanmasson_2019' ); ?></button>
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+						<figure class="icon__menu"><?php echo file_get_contents( get_template_directory() . "/images/icon__menu.svg" ); ?></figure>
+						<figure class="icon__close"><?php echo file_get_contents( get_template_directory() . "/images/icon__close.svg" ); ?></figure>
+					</button>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',
