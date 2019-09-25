@@ -1,11 +1,22 @@
-.grid-container {
+%grid {
     display: grid;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
     max-width: 1440px;
 
+    grid-column-gap: 1.5rem;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+
     @include lg {
         margin-left: 3rem;
         margin-right: 3rem;
+
+        grid-template-columns: repeat(12, 1fr);    
+    }
+
+    @media (min-width: calc(#{$screen-xl-min} + 96px)) {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
