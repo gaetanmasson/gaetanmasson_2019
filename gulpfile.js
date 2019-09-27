@@ -185,12 +185,14 @@ exports.phpcs = phpcs;
 exports.phpcbf = phpcbf;
 exports.build = build;
 exports.default = series(build, browserSyncInit, function(){
+
   function logFileChange(event) {
-    const fileName = require('path').relative(__dirname, event.path);
-    console.log('[' + 'WATCH'.green + '] ' + fileName.magenta + ' was ' + event.type + ', running tasks...');
+    const fileName = require('path').relative(__dirname, event);
+    console.log('[' + 'WATCH'.green + '] ' + fileName.magenta + ' was changed, running tasks...');
   }
+  
   watch(['assets/scss/**/*.scss'], series(cleanCss, sass))
-    .on('change', function(event) {
+    .on('change', function(event, stats) {
       logFileChange(event);
   });
   watch(['assets/js/**/*.js'], series(cleanJavascript, javascript, lint))
