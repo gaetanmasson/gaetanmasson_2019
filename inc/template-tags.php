@@ -129,9 +129,15 @@ if ( ! function_exists( 'gaetanmasson_2019_post_thumbnail' ) ) :
 			<div class="post-thumbnail">
 				<?php the_post_thumbnail(); ?>
 			</div><!-- .post-thumbnail -->
+		
+		<?php elseif ( is_front_page() ) : ?>
+
+			<div class="entry__thumbnail">
+				<?php the_post_thumbnail(); ?>
+			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
-
+		
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
 			the_post_thumbnail( 'post-thumbnail', array(
@@ -140,7 +146,7 @@ if ( ! function_exists( 'gaetanmasson_2019_post_thumbnail' ) ) :
 				) ),
 			) );
 			?>
-		</a>
+		</a><!-- .post-thumbnail -->
 
 		<?php
 		endif; // End is_singular().
