@@ -14,7 +14,7 @@
                 padding-bottom: 7.5rem;
                 padding-top: 7.5rem;      
 
-                grid-column: 1 / 12;
+                grid-column: 1 / 13;
             }
             .entry__thumbnail {
                 grid-column: 1 / 7;
@@ -30,7 +30,7 @@
 
                 grid-column: 1 / 7;
                 @include md {
-                    grid-column: 7 / 12;
+                    grid-column: 7 / 13;
                 }
             }
             .entry__type {
@@ -44,6 +44,19 @@
             .entry__excerpt {
                 color: $color__black-hex-32;
                 margin-bottom: 1.5rem;
+            }
+            &:nth-child(even) {
+                .entry__thumbnail {
+                    @include md {
+                        grid-column: 7 / 13;
+                    }
+                }
+                .entry__content {
+                    @include md {
+                        grid-column: 1 / 7;
+                        grid-row: 1;
+                    }
+                }
             }
         }
     }
