@@ -14,19 +14,32 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'gaetanmasson_2019' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'gaetanmasson_2019' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'gaetanmasson_2019' ), 'gaetanmasson_2019', '<a href="http://hello@gaetanmasson.me">Gaetan Masson</a>' );
-				?>
-		</div><!-- .site-info -->
+
+		<?php 
+		$footer_tagline = get_field( 'footer__tagline', 'options' );
+		$footer_email = get_field( 'footer__email', 'options' );
+
+		if ( $footer_tagline ) :
+		?>
+			<p class="footer__tagline"><?php echo $footer_tagline ?></p>
+		<?php 
+		endif; 
+		if ( $footer_email ) :
+		?>
+			<a href="mailto:<?php echo $footer_email ?>" class="footer__link"><?php echo $footer_email ?></a>  
+		<?php 
+		endif; 
+		?>
+
+		<nav id="footer-navigation" class="footer__navigation">
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'menu-2',
+				'menu_id'        => 'footer-menu',
+			) );
+			?>
+		</nav><!-- #footer-navigation -->
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
