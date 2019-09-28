@@ -1,32 +1,31 @@
 .site-header {
-    @extend %grid;
+  @extend %grid;
 
-    border-bottom: 1px solid $color__black-hex-10;
-    grid-template-areas: 
-        templateAreas((6, 'site-navigation'))
-        templateAreas((6, 'site-branding'));
-    
+  border-bottom: 1px solid $color__black-hex-10;
+  grid-template-areas:
+    templateAreas((6, "site-navigation"))
+    templateAreas((6, "site-branding"));
+
+  @include md {
+    grid-template-areas:
+      templateAreas((12, "site-navigation"))
+      templateAreas((1, ".", 6, "site-branding", 5, "."));
+  }
+
+  .main-navigation {
+    grid-area: site-navigation;
+  }
+  .site-branding {
+    grid-area: site-branding;
+    padding-bottom: 6rem;
+    padding-top: 6rem;
+    .frontpage__title {
+      margin-bottom: 1rem;
+      margin-top: 0;
+    }
     @include md {
-        grid-template-areas: 
-            templateAreas((12, 'site-navigation'))
-            templateAreas((1, '.', 6, 'site-branding', 5, '.'));
+      padding-bottom: 7.5rem;
+      padding-top: 7.5rem;
     }
-    
-    .main-navigation {
-        grid-area: site-navigation;
-    }
-    .site-branding {
-        grid-area: site-branding;
-        padding-bottom: 6rem;
-        padding-top: 6rem;
-        .frontpage__title {
-            margin-bottom: 1rem;
-            margin-top: 0;
-        }
-        @include md {
-            padding-bottom: 7.5rem;
-            padding-top: 7.5rem;
-        }
-    }
+  }
 }
-
