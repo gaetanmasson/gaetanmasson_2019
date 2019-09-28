@@ -45,6 +45,7 @@ if ( ! function_exists( 'gaetanmasson_2019_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'gaetanmasson_2019' ),
+			'menu-2' => esc_html__( 'Secondary', 'gaetanmasson_2019' ),
 		) );
 
 		/*
