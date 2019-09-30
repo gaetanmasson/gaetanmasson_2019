@@ -91,7 +91,7 @@
   .entry__role-container {
     @extend %grid-full;
 
-    background-color: $color__black-hex-10;
+    background-color: $color__black-hex-4;
     padding-bottom: 3rem;
     padding-top: 3rem;
 
@@ -110,7 +110,7 @@
   .entry__navigation-container {
     @extend %grid-full;
 
-    background-color: $color__black-hex-10;
+    background-color: $color__black-hex-4;
     padding-bottom: 2rem;
     padding-top: 2rem;
 
@@ -143,4 +143,59 @@
 
 .entry__excerpt {
   font-weight: 300;
+}
+
+.page {
+  .entry__header {
+    @extend %grid;
+
+    padding-bottom: 3rem;
+    padding-top: 7rem;
+
+    @include md {
+      padding-bottom: 3rem;
+      padding-top: 7rem;
+    }
+    .entry__image {
+      margin-bottom: 2rem;
+      margin-top: 0;
+
+      grid-column: col 2 / span 4;
+      grid-row: 1;
+
+      @include md {
+        grid-column: col 6 / span 2;
+      }
+      img {
+        border-radius: 100%;
+      }
+    }
+    .entry__title {
+      margin-bottom: 0;
+      margin-top: 0;
+      text-align: center;
+
+      grid-column: col 1 / -1;
+      grid-row: 2;
+      @include md {
+        grid-column: col 3 / span 8;
+      }
+    }
+  }
+  .entry__content-container {
+    @extend %grid;
+
+    padding-bottom: 3rem;
+
+    @include md {
+      padding-bottom: 7rem;
+    }
+    .entry__content {
+      grid-column: 1 / -1;
+
+      @include md {
+        grid-column: col 4 / span 6;
+      }
+    }
+  }
 }

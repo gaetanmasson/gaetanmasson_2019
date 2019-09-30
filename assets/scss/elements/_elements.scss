@@ -14,10 +14,11 @@ body {
 }
 
 hr {
-  background-color: $color__background-hr;
+  background-color: $color__black-hex-10;
   border: 0;
   height: 1px;
-  margin-bottom: 1.5em;
+  margin-bottom: 5em;
+  margin-top: 5em;
 }
 
 @import "lists";
