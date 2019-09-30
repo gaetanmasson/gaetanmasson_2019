@@ -1,7 +1,6 @@
 .site-header {
   @extend %grid;
 
-  border-bottom: 1px solid $color__black-hex-10;
   grid-template-areas:
     templateAreas((6, "site-navigation"))
     templateAreas((6, "site-branding"));
@@ -29,6 +28,13 @@
     }
     .frontpage__tagline {
       font-size: 1.5rem;
+      font-weight: 300;
     }
+  }
+}
+
+.home {
+  .site-header {
+    border-bottom: 1px solid $color__black-hex-10;
   }
 }

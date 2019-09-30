@@ -9,51 +9,78 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
+	<header class="entry__header">
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				gaetanmasson_2019_posted_on();
-				gaetanmasson_2019_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+	<?php 
+	$post__logo = get_field('post__logo');
+
+	if( !empty($post__logo) ): ?>
+
+		<figure class="entry__logo">
+			<img src="<?php echo $post__logo['url']; ?>" alt="<?php echo $post__logo['alt']; ?>" />
+		</figure>
+
+	<?php endif;
+	
+	$post__type = get_field( 'post__type' );
+
+	if( !empty($post__type) ) : ?>
+
+		<p class="entry__type"><?php echo $post__type; ?></P>
+
+	<?php endif;
+
+	the_title( '<h1 class="entry__title">', '</h1>' );
+	
+	$the_excerpt = get_the_excerpt();
+
+	if( !empty($the_excerpt) ) : ?>
+
+		<p class="entry__excerpt"><?php echo $the_excerpt; ?></p>
+
+	<?php endif; ?>
+
 	</header><!-- .entry-header -->
+	<div class="entry__role-container">
+		<div class="entry__role">
 
-	<?php gaetanmasson_2019_post_thumbnail(); ?>
+			<?php
+			$post__role = get_field('post__role');
 
-	<div class="entry-content">
-		<?php
-		the_content( sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gaetanmasson_2019' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			get_the_title()
-		) );
+			if( $post__role ):
+			?>
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gaetanmasson_2019' ),
-			'after'  => '</div>',
-		) );
-		?>
+			<h2>My role</h2>
+			<p><?php echo $post__role; ?></p>
+
+			<?php 
+			endif;
+			?>
+		</div>
+	</div>
+	<div class="entry__content-container">
+		<div class="entry__content">
+
+			<?php
+			the_content( sprintf(
+				wp_kses(
+					/* translators: %s: Name of current post. Only visible to screen readers */
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gaetanmasson_2019' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				get_the_title()
+			) );
+
+			wp_link_pages( array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gaetanmasson_2019' ),
+				'after'  => '</div>',
+			) );
+			?>
+		</div>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php gaetanmasson_2019_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

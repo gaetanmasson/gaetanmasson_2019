@@ -1,6 +1,7 @@
 body {
   font-family: $font__body-family;
   font-size: $font__body-size--small;
+  word-break: break-word;
 }
 
 p {
@@ -55,8 +56,4 @@ ins {
 
 big {
   font-size: 125%;
-}
-
-.frontpage__tagline {
-  margin: 0;
 }

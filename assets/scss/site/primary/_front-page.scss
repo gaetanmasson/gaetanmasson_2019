@@ -4,15 +4,13 @@
       @extend %grid;
 
       border-bottom: 1px solid $color__black-hex-10;
-      grid-column: 1 / 7;
+      grid-column: 1 / -1;
       padding-bottom: 3rem;
       padding-top: 3rem;
 
       @include md {
         padding-bottom: 7.5rem;
         padding-top: 7.5rem;
-
-        grid-column: 1 / 13;
       }
       .entry__thumbnail {
         grid-column: 1 / 7;
@@ -32,15 +30,12 @@
         }
       }
       .entry__type {
-        color: $color__black-hex-32;
         font-size: 1rem;
         margin-bottom: 0.75rem;
         margin-top: 0;
-        text-transform: uppercase;
       }
 
       .entry__excerpt {
-        color: $color__black-hex-32;
         margin-bottom: 1.5rem;
         margin-top: 0rem;
       }
@@ -59,4 +54,10 @@
       }
     }
   }
+}
+.frontpage__title {
+  font-size: 4rem;
+}
+.frontpage__tagline {
+  margin: 0;
 }

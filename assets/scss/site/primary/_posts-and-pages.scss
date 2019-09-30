@@ -16,3 +16,131 @@
   clear: both;
   margin: 0 0 1.5em;
 }
+
+.single-post {
+  .entry__header {
+    @extend %grid;
+
+    //border-bottom: 1px solid $color__black-hex-10;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+
+    @include md {
+      padding-bottom: 7.5rem;
+      padding-top: 7.5rem;
+    }
+
+    .entry__type {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      margin-top: 0;
+
+      grid-row: 2;
+    }
+    .entry__title {
+      margin-bottom: 2rem;
+      margin-top: 0;
+
+      grid-row: 3;
+    }
+    .entry__excerpt {
+      font-size: 1.5rem;
+      margin-bottom: 0;
+      margin-top: 0;
+
+      grid-row: 4;
+    }
+    .entry__type,
+    .entry__title,
+    .entry__excerpt {
+      text-align: center;
+
+      grid-column: col 1 / -1;
+      @include md {
+        grid-column: col 3 / span 8;
+      }
+    }
+    .entry__logo {
+      margin-top: 0;
+
+      grid-column: col 2 / span 4;
+      grid-row: 1;
+      @include md {
+        grid-column: col 6 / span 2;
+      }
+    }
+  }
+  .entry__content-container {
+    @extend %grid;
+
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+
+    @include md {
+      padding-bottom: 7.5rem;
+      padding-top: 7.5rem;
+    }
+    .entry__content {
+      grid-column: 1 / -1;
+
+      @include md {
+        grid-column: col 4 / span 6;
+      }
+    }
+  }
+  .entry__role-container {
+    @extend %grid-full;
+
+    background-color: $color__black-hex-10;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+
+    @include md {
+      padding-bottom: 7.5rem;
+      padding-top: 7.5rem;
+    }
+    .entry__role {
+      grid-column: 1 / -1;
+
+      @include md {
+        grid-column: col 4 / span 6;
+      }
+    }
+  }
+  .entry__navigation-container {
+    @extend %grid-full;
+
+    background-color: $color__black-hex-10;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+
+    .entry__navigation {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      grid-column: 1 / -1;
+
+      @include md {
+        grid-column: col 4 / span 6;
+      }
+
+      p {
+        color: $color__black-rgba-32;
+        margin: 0;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.entry__type {
+  color: $color__black-hex-32;
+  text-transform: uppercase;
+}
+
+.entry__excerpt {
+  font-weight: 300;
+}

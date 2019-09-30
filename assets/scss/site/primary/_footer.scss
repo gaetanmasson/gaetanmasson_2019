@@ -2,7 +2,7 @@
   @extend %grid;
 
   border-top: 1px solid $color__black-hex-10;
-  padding-bottom: 3rem;
+  padding-bottom: 4rem;
   padding-top: 3rem;
 
   @include md {
@@ -19,6 +19,8 @@
   .footer__tagline {
     font-size: 1.5rem;
     margin-bottom: 3rem;
+    margin-top: 0;
+    text-align: center;
   }
   .footer__link {
     font-size: 1.5rem;

@@ -7,11 +7,14 @@ h6 {
   clear: both;
   font-family: $font__heading-family;
 }
+h1 {
+  font-size: $font__h1;
+}
 h2 {
-  font-size: 2rem;
+  font-size: $font__h2;
   margin-top: 0;
   margin-bottom: 1rem;
 }
 .frontpage__title {
-  font-size: $font__heading-size--small;
+  font-size: 4rem;
 }

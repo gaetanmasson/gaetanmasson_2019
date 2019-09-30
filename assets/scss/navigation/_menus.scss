@@ -21,7 +21,6 @@
 
     @include md {
       display: block;
-      font-size: $font__body-size--large;
     }
 
     ul {
@@ -219,8 +218,4 @@
   font-size: $font__body-size--small;
   line-height: 1;
   margin: 0;
-
-  @include md {
-    font-size: $font__body-size--large;
-  }
 }
