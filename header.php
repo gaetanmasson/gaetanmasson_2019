@@ -42,14 +42,16 @@
 				?>
 			</div>
 		</nav><!-- #site-navigation -->
-		<div class="site-branding">
+		<?php
+		if ( is_front_page() && is_home() ) :
+		?>
+			<div class="site-branding">
 			<?php
-			if ( is_front_page() && is_home() ) :
 				$frontpage__title =  get_field('frontpage__title', 'option');
 				$frontpage__tagline = get_field('frontpage__tagline', 'option');
 				$frontpage__tagline_link = get_field('frontpage__tagline-link', 'option');
 				
-				if( $frontpage__tagline_link ) {
+				if ( $frontpage__tagline_link ) {
 					$frontpage__tagline_link_url = $frontpage__tagline_link['url'];
 					$frontpage__tagline_link_title = $frontpage__tagline_link['title'];
 					$frontpage__tagline_link_target = $frontpage__tagline_link['target'] ? $frontpage__tagline_link['target'] : '_self';
@@ -79,24 +81,15 @@
 						</p>
 					<?php
 					else :
-						?>
+					?>
 						<p class="frontpage__tagline"><?php echo "Tagline is missing"; ?></p>
-					<?php
-					endif;
+				<?php
+				endif;
 				?>
-			<?php
-			elseif ( is_page('about') ) :
-				$about_page__title = get_field( "about_page__title" );
-			?>
-				<h1 class="about-title"><?php echo ($about_page_title ? $about_page_title : 'Headline missing'); ?></h1>
-			<?php
-			else :
-			?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
-			?>
-		</div><!-- .site-branding -->
+			</div><!-- .site-branding -->
+		<?php
+		endif;
+		?>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
