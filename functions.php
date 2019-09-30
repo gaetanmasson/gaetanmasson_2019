@@ -122,15 +122,11 @@ add_action( 'widgets_init', 'gaetanmasson_2019_widgets_init' );
  * Enqueue scripts and styles.
  */
 function gaetanmasson_2019_scripts() {
-	wp_register_style(
-		'gaetanmasson_2019-styles',
-		get_template_directory_uri() . '/assets/css/styles.css',
-		null
-	);
+	wp_register_style( 'styles', get_template_directory_uri() . '/assets/css/styles.css', null );
 
-	wp_enqueue_style( 'gaetanmasson_2019-styles');
+	wp_enqueue_style( 'styles');
 
-	wp_enqueue_script( 'gaetanmasson_2019-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), '20190927', true );
+	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), null, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -139,7 +135,7 @@ function gaetanmasson_2019_scripts() {
 add_action( 'wp_enqueue_scripts', 'gaetanmasson_2019_scripts' );
 
 function gaetanmasson_2019_google_fonts() {
-	wp_enqueue_style( 'gaetanmasson_2019_google_fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600|Source+Serif+Pro&display=swap', false ); 
+	wp_enqueue_style( 'gaetanmasson_2019_google_fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600|Source+Serif+Pro&display=swap', false ); 
 }
 	 
 add_action( 'wp_enqueue_scripts', 'gaetanmasson_2019_google_fonts' );
