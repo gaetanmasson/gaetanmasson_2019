@@ -42,21 +42,48 @@
 	<?php endif; ?>
 
 	</header><!-- .entry-header -->
-	<div class="entry__role-container">
-		<div class="entry__role">
+	<div class="entry__meta-container">
+		<div class="entry__meta">
 
 			<?php
 			$post__role = get_field('post__role');
+			$post__length = get_field('post__length');
+			$post__team_size = get_field('post__team-size');
 
 			if( $post__role ):
 			?>
 
-			<h2>My role</h2>
-			<p><?php echo $post__role; ?></p>
+			<div class="entry__meta-item">
+				<span class="entry__meta-title">My role</span>
+				<span class="entry__meta-content"><?php echo $post__role; ?></span>
+			</div>
+
+			<?php 
+			endif;
+
+			if( $post__length ):
+			?>
+
+			<div class="entry__meta-item">
+				<span class="entry__meta-title">Duration</span>
+				<span class="entry__meta-content"><?php echo $post__length; ?></span>
+			</div>
+
+			<?php 
+			endif;
+
+			if( $post__team_size ):
+			?>
+
+			<div class="entry__meta-item">
+				<span class="entry__meta-title">Team size</span>
+				<span class="entry__meta-content"><?php echo $post__team_size; ?></span>
+			</div>
 
 			<?php 
 			endif;
 			?>
+
 		</div>
 	</div>
 	<div class="entry__content-container">

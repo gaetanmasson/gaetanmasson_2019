@@ -88,7 +88,7 @@
       }
     }
   }
-  .entry__role-container {
+  .entry__meta-container {
     @extend %grid-full;
 
     background-color: $color__black-hex-4;
@@ -99,11 +99,22 @@
       padding-bottom: 7.5rem;
       padding-top: 7.5rem;
     }
-    .entry__role {
+    .entry__meta {
+      display: flex;
       grid-column: 1 / -1;
+      justify-content: space-between;
 
       @include md {
-        grid-column: col 4 / span 6;
+        grid-column: col 3 / span 8;
+      }
+      .entry__meta-item {
+        display: flex;
+        flex-direction: column;
+        .entry__meta-title {
+          color: $color__black-rgba-32;
+          font-size: 0.75rem;
+          text-transform: uppercase;
+        }
       }
     }
   }
