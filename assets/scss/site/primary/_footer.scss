@@ -10,7 +10,7 @@
     padding-top: 7.5rem;
   }
   .footer__tagline,
-  .footer__link,
+  .footer__links,
   .footer__navigation {
     display: flex;
     justify-content: center;
@@ -22,9 +22,19 @@
     margin-top: 0;
     text-align: center;
   }
-  .footer__link {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+  .footer__navigation {
+    margin-bottom: 3rem;
+  }
+  .footer__links {
+    height: 2rem;
+    flex-direction: row;
+    align-items: center;
+  }
+  .footer__separator {
+    background-color: $color__black-hex-10;
+    height: 100%;
+    margin: 0 1.5rem;
+    width: 1px;
   }
 }
 
