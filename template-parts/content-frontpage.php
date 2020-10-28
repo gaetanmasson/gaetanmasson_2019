@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
-	<?php gaetanmasson_2019_post_thumbnail(); ?>
+	<?php gaetan_masson_design_post_thumbnail(); ?>
 
 	<div class="entry__content">
 

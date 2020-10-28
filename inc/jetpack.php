@@ -14,11 +14,11 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function gaetanmasson_2019_jetpack_setup() {
+function gaetan_masson_design_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'render'    => 'gaetanmasson_2019_infinite_scroll_render',
+		'render'    => 'gaetan_masson_design_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
@@ -28,7 +28,7 @@ function gaetanmasson_2019_jetpack_setup() {
 	// Add theme support for Content Options.
 	add_theme_support( 'jetpack-content-options', array(
 		'post-details'    => array(
-			'stylesheet' => 'gaetanmasson_2019-style',
+			'stylesheet' => 'gaetan_masson_design-style',
 			'date'       => '.posted-on',
 			'categories' => '.cat-links',
 			'tags'       => '.tags-links',
@@ -42,12 +42,12 @@ function gaetanmasson_2019_jetpack_setup() {
 		),
 	) );
 }
-add_action( 'after_setup_theme', 'gaetanmasson_2019_jetpack_setup' );
+add_action( 'after_setup_theme', 'gaetan_masson_design_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function gaetanmasson_2019_infinite_scroll_render() {
+function gaetan_masson_design_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :

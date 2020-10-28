@@ -16,20 +16,20 @@
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php
-			gaetanmasson_2019_posted_on();
-			gaetanmasson_2019_posted_by();
+			gaetan_masson_design_posted_on();
+			gaetan_masson_design_posted_by();
 			?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php gaetanmasson_2019_post_thumbnail(); ?>
+	<?php gaetan_masson_design_post_thumbnail(); ?>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php gaetanmasson_2019_entry_footer(); ?>
+		<?php gaetan_masson_design_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry__header">
-		<figure class="entry__image"><?php gaetanmasson_2019_post_thumbnail(); ?></figure>
+		<figure class="entry__image"><?php gaetan_masson_design_post_thumbnail(); ?></figure>
 		<?php the_title( '<h1 class="entry__title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
@@ -21,7 +21,7 @@
 			the_content();
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gaetanmasson_2019' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gaetan_masson_design' ),
 				'after'  => '</div>',
 			) );
 			?>
@@ -35,7 +35,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'gaetanmasson_2019' ),
+						__( 'Edit <span class="screen-reader-text">%s</span>', 'gaetan_masson_design' ),
 						array(
 							'span' => array(
 								'class' => array(),

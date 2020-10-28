@@ -93,7 +93,7 @@
 			the_content( sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gaetanmasson_2019' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'gaetan_masson_design' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -104,7 +104,7 @@
 			) );
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gaetanmasson_2019' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gaetan_masson_design' ),
 				'after'  => '</div>',
 			) );
 			?>

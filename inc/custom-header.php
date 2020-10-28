@@ -14,27 +14,27 @@
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses gaetanmasson_2019_header_style()
+ * @uses gaetan_masson_design_header_style()
  */
-function gaetanmasson_2019_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'gaetanmasson_2019_custom_header_args', array(
+function gaetan_masson_design_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'gaetan_masson_design_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'gaetanmasson_2019_header_style',
+		'wp-head-callback'       => 'gaetan_masson_design_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'gaetanmasson_2019_custom_header_setup' );
+add_action( 'after_setup_theme', 'gaetan_masson_design_custom_header_setup' );
 
-if ( ! function_exists( 'gaetanmasson_2019_header_style' ) ) :
+if ( ! function_exists( 'gaetan_masson_design_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see gaetanmasson_2019_custom_header_setup().
+	 * @see gaetan_masson_design_custom_header_setup().
 	 */
-	function gaetanmasson_2019_header_style() {
+	function gaetan_masson_design_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

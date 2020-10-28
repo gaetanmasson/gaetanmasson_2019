@@ -1,18 +1,18 @@
 {
-  "name": "gaetanmasson_2019",
+  "name": "gaetan_masson_design",
   "version": "1.0.0",
   "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gaetanmasson/gaetanmasson_2019.git"
+    "url": "git+https://github.com/gaetanmasson/gaetan_masson_design.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gaetanmasson/gaetanmasson_2019/issues"
+    "url": "https://github.com/gaetanmasson/gaetan_masson_design/issues"
   },
-  "homepage": "https://github.com/gaetanmasson/gaetanmasson_2019#readme",
+  "homepage": "https://github.com/gaetanmasson/gaetan_masson_design#readme",
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "autoprefixer": "^9.6.1",
