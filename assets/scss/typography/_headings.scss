@@ -14,6 +14,12 @@ h2 {
   font-size: $font__h2;
   margin-top: 0;
   margin-bottom: 1rem;
+  &:not(:first-child) {
+    margin-top: 4rem;
+  }
+  &.entry__title {
+    margin-top: 0;
+  }
 }
 .frontpage__title {
   font-size: 4rem;
