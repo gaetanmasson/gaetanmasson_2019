@@ -81,11 +81,6 @@
   @include md {
     height: $size__site-topbar--lg;
   }
-  // 	.current_page_item > a,
-  // 	.current-menu-item > a,
-  // 	.current_page_ancestor > a,
-  // 	.current-menu-ancestor > a {
-  // 	}
 }
 
 .footer__navigation {
@@ -146,6 +141,17 @@
   a {
     display: block;
     //text-decoration: none;
+  }
+}
+
+.main-navigation,
+.footer__navigation {
+  .current_page_item > a,
+  .current-menu-item > a,
+  .current_page_ancestor > a,
+  .current-menu-ancestor > a {
+    color: $color__text-main;
+    text-decoration: none;
   }
 }
 
