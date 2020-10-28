@@ -102,14 +102,22 @@
     .entry__meta {
       display: flex;
       grid-column: 1 / -1;
-      justify-content: space-between;
+      flex-direction: column;
 
       @include md {
         grid-column: col 3 / span 8;
+        justify-content: space-between;
+        flex-direction: row;
       }
       .entry__meta-item {
         display: flex;
         flex-direction: column;
+        &:not(:first-child) {
+          margin-top: 1.5rem;
+          @include md {
+            margin-top: 0;
+          }
+        }
         .entry__meta-title {
           color: $color__black-rgba-32;
           font-size: 0.75rem;
