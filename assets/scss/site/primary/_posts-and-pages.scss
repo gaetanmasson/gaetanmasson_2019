@@ -25,6 +25,8 @@
     padding-bottom: 3rem;
     padding-top: 3rem;
 
+    justify-items: center;
+
     @include md {
       padding-bottom: 7.5rem;
       padding-top: 7.5rem;
@@ -51,8 +53,7 @@
       grid-row: 4;
     }
     .entry__type,
-    .entry__title,
-    .entry__excerpt {
+    .entry__title {
       text-align: center;
 
       grid-column: col 1 / -1;
@@ -60,6 +61,16 @@
         grid-column: col 3 / span 8;
       }
     }
+
+    .entry__excerpt {
+      text-align: center;
+
+      grid-column: col 1 / -1;
+      @include md {
+        grid-column: col 4 / span 6;
+      }
+    }
+
     .entry__logo {
       margin-top: 0;
 
