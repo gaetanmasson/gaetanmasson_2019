@@ -12,6 +12,8 @@ $color__link: royalblue;
 $color__link-visited: purple;
 $color__link-hover: midnightblue;
 $color__text-main: #222;
+$color__text-secondary: #727272;
+$color__text-tertiary: #adadad;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
@@ -24,7 +26,7 @@ $color__black-hex-4: #f5f5f5;
 $color__black-hex-10: #e6e6e6;
 $color__black-hex-32: #adadad;
 
-$color__black-rgba-32: rgba(#000, 0.32);
+$color__black-rgba-32: rgba($color__text-main, 0.32);
 
 $color__blue-hex-100: #0077be;
 $color__blue-hex-110: #00578b;
