@@ -2,3 +2,22 @@ table {
   margin: 0 0 1.5em;
   width: 100%;
 }
+
+.wp-block-table {
+  table {
+    border: 1px solid $color__black-hex-10;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    th {
+      text-align: left;
+      background-color: $color__black-hex-4;
+    }
+    th,
+    td {
+      border: 1px solid $color__black-hex-10;
+      padding: 0.5rem 1rem;
+      vertical-align: top;
+    }
+  }
+}
