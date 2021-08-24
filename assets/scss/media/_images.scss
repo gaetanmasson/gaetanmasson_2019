@@ -1,6 +1,11 @@
 .wp-block-image {
   margin-top: 4rem;
   margin-bottom: 4rem;
+  &.has-shadow {
+    img {
+      box-shadow: 0 4px 12px rgba($color__text-main, 0.24);
+    }
+  }
 }
 
 .gallery {
